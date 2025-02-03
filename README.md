@@ -22,7 +22,7 @@ This API provides mathematical properties and fun facts about numbers.
 ### Endpoint
 
 ```
-GET localhost:3000/api/classify-number?number=371
+GET https://hng-stage-1-q7sk.onrender.com/api/classify-number?number=371
 ```
 
 - URL: `GET /`
