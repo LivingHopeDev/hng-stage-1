@@ -55,12 +55,14 @@ const getProperties = (num) => {
 const getFunFact = async (num) => {
   try {
     const response = await axios(`http://numbersapi.com/${num}/math`);
-    const fact = await response.text();
+    const fact = await response.data;
     return fact;
   } catch (error) {
-    return `${num} is ${num % 2 === 0 ? "even" : "odd"} and ${
-      isArmstrong(num) ? "is" : "is not"
-    } an Armstrong number.`;
+    res.status(500).json({
+      number: num,
+      error: true,
+      message: "Failed to fetch fun fact",
+    });
   }
 };
 
